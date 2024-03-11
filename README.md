@@ -250,3 +250,4 @@ To connect RDS we will need to install MySQL client compatible with PHP. For tha
 - Finally we Done it.
 
 ![Screenshot (888)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/8bcb542d-ecea-460f-ab7e-9717a0619261)
+- At last Delete all resources Which was created by you.
