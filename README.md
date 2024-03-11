@@ -93,13 +93,16 @@ To connect RDS we will need to install MySQL client compatible with PHP. For tha
 ![Screenshot (858)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/ee40a2dd-f171-4261-9c5c-2a1da1324d85)
 
 - Existing VPC security group : Select security group in which All Traffic is enabled for incommmig or other wise enabled it first.
+  
 ![Screenshot (859)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/5731317a-f3ba-495c-9c50-3d63b7a752b1)
 
 - Additional conifiguration : 
     - Initial database name : intel
+    - 
 ![Screenshot (860)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/29f9c0a6-3241-4b43-a862-25408ab8bd62)
 
 - Click on Create database and waite for few minutes to create .
+  
 ![Screenshot (861)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/6bd77e68-a779-453e-803e-2bdb011ed6e8)
 
 - Now copy the Endpoint of RDS 
@@ -116,6 +119,7 @@ To connect RDS we will need to install MySQL client compatible with PHP. For tha
 - Replace the RDS Endpoint in index.php file at $servername : "database-1.ct8qusq0cw0c.us-east-1.rds.amazonaws.com"
 
 ![Screenshot (864)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/a8689747-d91e-42f7-9d24-7a6f200642b2)
+
 - Run these commands
 ```bash
   sudo apt install mysql-server -y
@@ -131,6 +135,7 @@ To connect RDS we will need to install MySQL client compatible with PHP. For tha
 - you can able to see "intel" database is created.
 
 ![Screenshot (866)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/1a3f11bd-a3a7-4543-aa8f-d8c0944840a4)
+
 - Use following SQL commands
 ```bash
   show databases;
@@ -144,10 +149,12 @@ To connect RDS we will need to install MySQL client compatible with PHP. For tha
 
 ![Screenshot (867)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/4a89d739-9085-4f16-8351-fade73049e42)
 
-- Now we can able to uplode date into databases through EC2 public ip 
+- Now we can able to uplode date into databases through EC2 public ip
+  
 ![Screenshot (868)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/141d28e7-e618-460b-a525-b3ed8926f039)
 
 - Finally we re-check the database if the Name and Email values has been updated or not.
+  
 ```bash
   select * from data;
 ```
@@ -168,6 +175,7 @@ To connect RDS we will need to install MySQL client compatible with PHP. For tha
 - Click on Next
 
 ![Screenshot (872)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/cb7f569c-347c-458c-92d2-c2417df6f884)
+
 - Select the instance which are under Register targets
 - Click on "Include as pending below"
 
@@ -181,9 +189,11 @@ To connect RDS we will need to install MySQL client compatible with PHP. For tha
 - Select Application Load Balancer
 
 ![Screenshot (875)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/0f197dfe-9a5e-407a-a2af-1a716e304303)
+
 - Give Load Balancer Name in Basic configuration
 
 ![Screenshot (876)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/bcae07d3-e239-47c3-afd6-87401b75e134)
+
 - Select at least 2 availability zones where the Website has to run
 
 ![Screenshot (877)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/d061f327-62dd-4fa5-aef3-b494a44cce8d)
@@ -200,6 +210,7 @@ To connect RDS we will need to install MySQL client compatible with PHP. For tha
 ### 4) Create Auto-Scaling Group
 - For creating Auto-Scaling Group give name for it 
 - Select the Templates which was created in previously step.
+- 
 ![Screenshot (880)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/c40d92c5-a3fb-4733-ab80-0d8a632cb9f4)
 
 - Selet atleast 2 AZ 
@@ -223,10 +234,12 @@ To connect RDS we will need to install MySQL client compatible with PHP. For tha
 
 
 ![Screenshot (884)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/8c25f359-e842-456d-b233-ddf1fc0d3888)
+
 - Leave other settings as Default and click on Next
 - Finally click on create Auto-Scaling group
 
 ![Screenshot (885)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/ba2c9914-69e6-49e8-a7f1-8549d21fee3b)
+
 - Finally we have added instances to Targer group
 
 ![Screenshot (886)](https://github.com/Vishnu15-dev/Multi-Tier-Website-On-AWS-EC2-with-Auto-Scaling/assets/124747520/bf543c73-b1b5-4b90-b684-37b5d2371052)
