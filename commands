@@ -1,0 +1,26 @@
+# commands for installing apache2 
+sudo apt-get update
+sudo apt-get install apache2 -y
+cd /var/www/html
+sudo rm index.html
+sudo nano index.php
+copy and paste the php code
+ctrl+s
+ctrl+x
+
+# commands for libraries:
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt install php5.6 mysql-client php5.6-mysqli -y
+
+
+# commands for RDS:
+sudo apt install mysql-server -y
+sudo mysql -h "mysql-endpoint" -u "username" -p
+password
+show databases;
+use intel;
+create table data(firstname varchar(30), email varchar(30));
+insert into data values("aws","aws@gmail.com");
+show tables;
+select * from data;
+
